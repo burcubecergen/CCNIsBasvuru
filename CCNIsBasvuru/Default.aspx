@@ -326,7 +326,7 @@
                 <asp:FileUpload ID="FileUpload1" runat="server" Visible="False" />
                 <%--</div>--%>
 
-                <legend>KVKK Bilgilendirme.</legend>
+                <legend>KVKK Bilgilendirme</legend>
 
                 <div class="form-group">
                     <label class="col-md-3"></label>
