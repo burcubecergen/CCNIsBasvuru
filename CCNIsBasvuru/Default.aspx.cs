@@ -81,7 +81,10 @@ public partial class _Default : System.Web.UI.Page
         Tecrube1IsYeri,Tecrube1Unvan,Tecrube1BasTar,Tecrube1BitTar,
         Tecrube2IsYeri,Tecrube2Unvan,Tecrube2BasTar,Tecrube2BitTar,
         Tecrube3IsYeri,Tecrube3Unvan,Tecrube3BasTar,Tecrube3BitTar,CVDosyaAdi,
-        KVKKOnay1AydinlatmaMetni,KVKKOnay2AcikRiza,KVKKOnay3IstirakPaylasim)
+        KVKKOnay1AydinlatmaMetni,KVKKOnay2AcikRiza,KVKKOnay3IstirakPaylasim,
+        YakinAdi,YakinDerece,YakinSirket,YakinSirketPoz,
+        YakinAdi1,YakinDerecesi1,YakinSirket1,YakinSirketPoz1,
+        YakinAdi2,YakinDerecesi2,YakinSirket2,YakinSirketPoz2)
         VALUES
         (getdate(),@Sirket,@BasvuruTipi,
         @AdSoyad,@Pozisyon,@AdresUlke,@AdresSehir,@AdresIlce,@CepTel,@CalismaUlke,@DogumTarihi,
@@ -89,7 +92,10 @@ public partial class _Default : System.Web.UI.Page
         @EgitimSeviye,@EgitimOkul,@EgitimBolum,@EgitimBasTar,@EgitimBitTar,
         @Tecrube1IsYeri,@Tecrube1Unvan,@Tecrube1BasTar,@Tecrube1BitTar,
         @Tecrube2IsYeri,@Tecrube2Unvan,@Tecrube2BasTar,@Tecrube2BitTar,
-        @Tecrube3IsYeri,@Tecrube3Unvan,@Tecrube3BasTar,@Tecrube3BitTar,@CVDosyaAdi,@KVKKOnay1,@KVKKOnay2,@KVKKOnay3)");
+        @Tecrube3IsYeri,@Tecrube3Unvan,@Tecrube3BasTar,@Tecrube3BitTar,@CVDosyaAdi,@KVKKOnay1,@KVKKOnay2,@KVKKOnay3,
+        @YakinAdi,@YakinDerece,@YakinSirket,@YakinSirketPoz,
+        @YakinAdi1,@YakinDerecesi1,@YakinSirket1,@YakinSirketPoz1,
+        @YakinAdi2,@YakinDerecesi2,@YakinSirket2,@YakinSirketPoz2)");
 
         cmd.Parameters.AddWithValue("@Sirket", cmbSirketSec.Text);
         cmd.Parameters.AddWithValue("@BasvuruTipi", rdTuru.SelectedValue);
@@ -128,6 +134,18 @@ public partial class _Default : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@KVKKOnay1", (KVKKOnay1.Checked ? 1 : 0));
         cmd.Parameters.AddWithValue("@KVKKOnay2", (KVKKOnay2.Checked ? 1 : 0));
         cmd.Parameters.AddWithValue("@KVKKOnay3", (KVKKOnay3.Checked ? 1 : 0));
+        cmd.Parameters.AddWithValue("@YakinAdi", txtYakinAdi.Text);
+        cmd.Parameters.AddWithValue("@YakinDerece", txtYakinDerece.Text);
+        cmd.Parameters.AddWithValue("@YakinSirket", txtYakinSirket.Text);
+        cmd.Parameters.AddWithValue("@YakinSirketPoz", txtYakinSirketPoz.Text);
+        cmd.Parameters.AddWithValue("@YakinAdi1", txtYakinAdi1.Text);
+        cmd.Parameters.AddWithValue("@YakinDerecesi1", txtYakinDerece1.Text);
+        cmd.Parameters.AddWithValue("@YakinSirket1", txtYakinSirket1.Text);
+        cmd.Parameters.AddWithValue("@YakinSirketPoz1", txtYakinSirketPoz1.Text);
+        cmd.Parameters.AddWithValue("@YakinAdi2", txtYakinAdi2.Text);
+        cmd.Parameters.AddWithValue("@YakinDerecesi2", txtYakinDerece2.Text);
+        cmd.Parameters.AddWithValue("@YakinSirket2", txtYakinSirket2.Text);
+        cmd.Parameters.AddWithValue("@YakinSirketPoz2", txtYakinSirketPoz2.Text);
 
         cmd.Connection = conn;
         conn.Open();
@@ -155,18 +173,21 @@ public partial class _Default : System.Web.UI.Page
         sc.Port = 587;
         sc.Host = "smtp.office365.com";
         sc.EnableSsl = true;
-        sc.Credentials = new NetworkCredential("dys@ccnholding.com", "1234dddD");
+        sc.Credentials = new NetworkCredential("dys@ccnholding.com", "*06-Dys%/");
 
         MailMessage mail = new MailMessage();
 
         mail.From = new MailAddress("dys@ccnholding.com", "Doküman Yönetim Sistemi");
 
-        mail.To.Add("bkeser@ccnholding.com");
-        mail.To.Add("mtas@ccnholding.com");
-        mail.To.Add("zbaysal@ccnsaglik.com");
+        mail.To.Add("bkeser@ccngroup.com.tr");
+        //mail.To.Add("zbaysal@ccnsaglik.com");
+        mail.To.Add("zbozkurt@ccninsaat.com");
+        mail.To.Add("bguney@ccngroup.com.tr");
+        mail.To.Add("ftasdemir@ccnsaglik.com");
+        mail.To.Add("emsal.orhan@tedizmir.k12.tr");
 
-        mail.CC.Add("gbicer@ccnholding.com");
-        mail.Bcc.Add("hbozkurt@ccnholding.com");
+        mail.CC.Add("vogur@ccngroup.com.tr");
+        //mail.Bcc.Add("hbozkurt@ccnholding.com");
 
         mail.Subject = "İnternet Üzerinden İş Başvurusu";
         mail.IsBodyHtml = true;
@@ -220,6 +241,18 @@ public partial class _Default : System.Web.UI.Page
         KVKKOnay1.Checked = false;
         KVKKOnay2.Checked = false;
         KVKKOnay3.Checked = false;
+        txtYakinAdi.Text = "";
+        txtYakinDerece.Text = "";
+        txtYakinSirket.Text = "";
+        txtYakinSirketPoz.Text = "";
+        txtYakinAdi1.Text = "";
+        txtYakinDerece1.Text = "";
+        txtYakinSirket1.Text = "";
+        txtYakinSirketPoz1.Text = "";
+        txtYakinAdi2.Text = "";
+        txtYakinDerece2.Text = "";
+        txtYakinSirket2.Text = "";
+        txtYakinSirketPoz2.Text = "";
 
 
         //Response.Redirect("basarili.aspx");

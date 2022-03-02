@@ -53,13 +53,11 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1>İş Başvuru Formu</h1>
-            <p>Merhaba,</p>
-            <p>Öncelikle şirketimize göstermiş olduğunuz ilgiye teşekkür ederiz.</p>
-            <p>Özgeçmişinizi değerlendirme altına alabilmemiz için özgeçmiş bilgilerinizi sistem üzerinden detaylıca oluşturmanızı rica ederiz.</p>
-            <p>Özgeçmişiniz aranılan pozisyonlara uygun olması halinde, sizinle mutlaka irtibata geçeceğiz.</p>
+            <h2>İş Başvuru Formu</h2>
+            <p>Sayın İlgili,</p>
+            <p>Öncelikle şirketimize göstermiş olduğunuz ilgiye teşekkür ederiz. Özgeçmişinizi değerlendirmemiz için bilgilerinizi aşağıda belirtilen şekilde belirtmenizi rica ederiz. Özgeçmişinizin aranılan pozisyonlara uygun olması halinde sizinle irtibata geçeceğimizi bilgilerinize sunarız.</p>
             <p>Saygılarımızla,</p>
-            <p>CCN Holding İnsan Kaynakları</p>
+            <p>CCN Group İnsan Kaynakları Direktörlüğü</p>
         </div>
 
         <div class="container">
@@ -320,6 +318,59 @@
 
                 </div>
 
+               <legend>Başvuru yaptığınız şirket, CCN Group veya grup şirketlerinde çalışan bir yakınınız var mı? Varsa aşağıdaki bilgileri doldurunuz.</legend>
+
+                <div class="form-group">
+
+                    <table class="table col-md-8">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="col-md-12">Adı Soyadı</label></th>
+                                <th>
+                                    <label class="col-md-12">Yakınlık Derecesi</label></th>
+                                <th>
+                                    <label class="col-md-12">Grup Şirketi</label></th>
+                                <th>
+                                    <label class="col-md-12">Görevi / Pozisyonu</label></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtYakinAdi" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinDerece" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinSirket" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinSirketPoz" runat="server" CssClass="form-control"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtYakinAdi1" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinDerece1" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinSirket1" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinSirketPoz1" runat="server" CssClass="form-control"></asp:TextBox></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:TextBox ID="txtYakinAdi2" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinDerece2" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinSirket2" runat="server" CssClass="form-control"></asp:TextBox></td>
+                                <td>
+                                    <asp:TextBox ID="txtYakinSirketPoz2" runat="server" CssClass="form-control"></asp:TextBox></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
                 <%--<legend>CV (word veya pdf)</legend>--%>
                 <%--<div class="form-group">--%>
                 <%--<label class="col-md-3"></label>--%>
@@ -337,21 +388,21 @@
                                     <td>
                                         <asp:CheckBox ID="KVKKOnay1" runat="server" CssClass="checkbox" /></td>
                                     <td>
-                                        <p class="col-md-12">Kişisel Verilerinin İşlenmesine İlişkin <a href="http://www.ccnholding.com/sayfalar.asp?LanguageID=1&cid=2&id=274" target="_blank">Aydınlatma Metni</a>’ni okudum.</p>
+                                        <p class="col-md-12">Kişisel Verilerin İşlenmesine İlişkin <a href="http://www.ccnholding.com/sayfalar.asp?LanguageID=1&cid=2&id=274" target="_blank">Aydınlatma Metni</a>’ni okudum.</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <asp:CheckBox ID="KVKKOnay2" runat="server" CssClass="checkbox" /></td>
                                     <td>
-                                        <p class="col-md-12">CCN Yatırım Holding A.Ş (“Şirket”) tarafından kişisel verilerimin işlenmesine ilişkin bilgilendirmeleri içeren Kişisel Verilerinin İşlenmesine İlişkin Aydınlatma Metni’ni okuduğumu, anladığımı, haklarım konusunda aydınlatıldığımı, paylaşmış olduğum kişisel verilerimin Kişisel Verilerinin İşlenmesine İlişkin Aydınlatma Metni’nde yer alan şartlar dâhilinde işlenmesine açık bir şekilde rıza verdiğimi kabul ve beyan ederim.</p>
+                                        <p class="col-md-12">İşbu başvuru formunda belirtilen ilgili CCN Group şirketi (“Şirket”) tarafından kişisel verilerimin işlenmesine ilişkin bilgilendirmeleri içeren Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni’ni okuduğumu, anladığımı, haklarım konusunda aydınlatıldığımı, paylaşmış olduğum kişisel verilerimin Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni’nde yer alan şartlar dâhilinde işlenmesine açık bir şekilde rıza verdiğimi kabul ve beyan ederim.</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <asp:CheckBox ID="KVKKOnay3" runat="server" CssClass="checkbox" /></td>
                                     <td>
-                                        <p class="col-md-12">Paylaşmış olduğum kişisel verilerimin uygun pozisyon bulunması halinde değerlendirilmek üzere CCN Yatırım Holding A.Ş.’nin iştirak şirketleri ile paylaşılmasına rıza verdiğimi kabul ve beyan ederim.</p>
+                                        <p class="col-md-12">Paylaşmış olduğum kişisel verilerimin uygun pozisyon bulunması halinde değerlendirilmek üzere iş başvurusunda bulunduğum şirketin iştirak şirketleri ile paylaşılmasına rıza verdiğimi kabul ve beyan ederim.</p>
                                     </td>
                                 </tr>
                             </tbody>
